@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: newTechMindDataBase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_container
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - mysql
+
+  springboot-app:
+    image: newtechmindbackend-springboot-app:sprint2
+    container_name: springboot_container
+    restart: always
+    ports:
+      - "8085:8085"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/newTechMindDataBase?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SERVER_PORT: 8085
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: workbottn@gmail.com
+      SPRING_MAIL_PASSWORD: cufzgbpnihwgbllr
+      SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID: 101307913397-esto5rnr124rs7olfelba8ami7p8p2ij.apps.googleusercontent.com
+      SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET: 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
+      PAYPAL_CLIENT_ID: AaIDO2dQkJM3EozZNEPZRYgqb2ITov3FursHYH-_7R-7IfcJXI_dAjFwrcrv5ROeNIKre6RuiQm3hBrC
+      PAYPAL_CLIENT_SECRET: ENGNOyAqxUqkMxn4YpnkooN9D6jOn6LAUnR-bvglhr7UP_LuG1xbX8pphHgWVBCFLlfuspLFTyn8E6RZ
+      PAYPAL_MODE: sandbox
+      APP_URL: http://localhost:3000
+
+volumes:
+  mysql_data:
