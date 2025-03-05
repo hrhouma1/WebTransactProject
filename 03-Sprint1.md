@@ -46,18 +46,14 @@
 +-------+---------+------------------------------------------------+------------------------------------------+
 ```
 
+<br/>
+<br/>
 
 
 
 
-
-
-
-
-
-
-
-
+<br/>
+<br/>
 # 2 - **Résumé de la Stratégie de Test**
 
 *Ce processus garantit des tests progressifs et efficaces, facilitant l’identification des erreurs à chaque étape.*
@@ -67,6 +63,8 @@
 2.3. **Tester la gestion des plans** après l’authentification.  
 2.4. **Enfin, tester les paiements**, car ils dépendent des plans et de l’authentification.  
 
+<br/>
+<br/>
 
 
 
@@ -88,6 +86,12 @@
 
 
 
+
+
+
+
+<br/>
+<br/>
 
 # 3 - **Détails des Tests et Méthodologie**
 
@@ -101,32 +105,32 @@ Sans authentification, il est impossible d’accéder aux autres fonctionnalité
 
 #### **Étape 1 : Tester l’inscription et la connexion pour un utilisateur normal**
 
-3.1.1. **POST** `/api/v1/auth/user/register` – Créer un utilisateur normal.  
+➔ 3.1.1. **POST** `/api/v1/auth/user/register` – Créer un utilisateur normal.  
    - Envoyez les données requises (email, mot de passe, etc.).  
    - Vérifiez dans la base de données que l'utilisateur est bien enregistré.
      
-3.1.2. **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Vérifier le compte.  
+➔ 3.1.2. **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Vérifier le compte.  
    - Utilisez le code reçu par email pour activer le compte.  
    - Vérifiez que `is_validated = true` en base de données.
      
-3.1.3. **POST** `/api/v1/auth/token` – Connexion de l’utilisateur.  
+➔ 3.1.3. **POST** `/api/v1/auth/token` – Connexion de l’utilisateur.  
    - Utilisez les identifiants pour récupérer un token d’authentification.  
    - **Stockez le token** dans le `localStorage` (via les outils du navigateur).  
 
 
 #### **Étape 2 : Tester l’inscription et la connexion d’un administrateur**
 
-2.2.1. **POST** `/api/v1/auth/admin/register` – Inscrire un administrateur.  
+➔ 2.2.1. **POST** `/api/v1/auth/admin/register` – Inscrire un administrateur.  
 
-2.2.2. Modifier **manuellement** en base de données `is_validated = true`.  
+➔ 2.2.2. Modifier **manuellement** en base de données `is_validated = true`.  
 
-2.2.3. **POST** `/api/v1/auth/token` – Connexion de l’admin.  
+➔ 2.2.3. **POST** `/api/v1/auth/token` – Connexion de l’admin.  
    - Récupérer un token d’authentification.
    - Vérifiez que le token est bien généré.
      
-2.2.4. **(Optionnel)** **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Si la validation admin est requise, tester cette API.
+➔ 2.2.4. **(*Prochains sprint*)** **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Si la validation admin est requise, tester cette API.
       
-2.2.5. **Ajout du superadmin** (MOHSEN1) : S'assurer que l'email `haythemrehouma@gmail.com` peut valider les administrateurs.  
+➔ 2.2.5. **(*Prochains sprint*) Ajout du superadmin**: Seul l'email `haythemrehouma@gmail.com` peut valider les administrateurs.  
 
 
 
@@ -136,9 +140,9 @@ Sans authentification, il est impossible d’accéder aux autres fonctionnalité
 Sans logout, les utilisateurs restent connectés indéfiniment et les tests d’authentification ne seront pas fiables.  
 
 **Méthode de test :**  
-3.2.1. **Supprimer le token du localStorage.**  
-3.2.2. Vérifier que l’utilisateur n’a plus accès aux pages sécurisées.  
-3.2.3. Ajouter un **bouton de déconnexion** sur l’interface.  
+➔ 3.2.1. **Supprimer le token du localStorage.**  
+➔ 3.2.2. Vérifier que l’utilisateur n’a plus accès aux pages sécurisées.  
+➔ 3.2.3. Ajouter un **bouton de déconnexion** sur l’interface.  
 
 
 
@@ -147,8 +151,8 @@ Sans logout, les utilisateurs restent connectés indéfiniment et les tests d’
 💡 *Pourquoi ?*  
 L’admin doit être authentifié pour gérer les plans.  
 
-3.3.1. Se connecter avec l’admin via **POST** `/api/v1/auth/token`.  
-3.3.2. Vérifier que les routes protégées de l’admin sont bien accessibles.  
+➔ 3.3.1. Se connecter avec l’admin via **POST** `/api/v1/auth/token`.  
+➔ 3.3.2. Vérifier que les routes protégées de l’admin sont bien accessibles.  
 
 
 ### **3.4. Gestion des Plans** (Tester après l’authentification)
@@ -156,15 +160,17 @@ L’admin doit être authentifié pour gérer les plans.
 L’utilisateur doit être connecté avant de gérer ses plans d’abonnement.  
 
 #### **Méthode de test :**
-3.4.1. **POST** `/api/v1/plan/add` – Ajouter un plan.  
-   - Vérifier la création en base de données.  
-3.4.2. **PUT** `/api/v1/plan/update/{id}` – Modifier un plan.  
-   - Tester avec des valeurs différentes et valider la mise à jour.  
-3.4.3. **PUT** `/api/v1/plan/delete/{id}` – Supprimer un plan.  
+➔ 3.4.1. **POST** `/api/v1/plan/add` – Ajouter un plan.  
+   - Vérifier la création en base de données.
+     
+➔ 3.4.2. **PUT** `/api/v1/plan/update/{id}` – Modifier un plan.  
+   - Tester avec des valeurs différentes et valider la mise à jour.
+     
+➔ 3.4.3. **PUT** `/api/v1/plan/delete/{id}` – Supprimer un plan.  
    - Vérifier que le plan est bien supprimé en base de données.  
 
-#### **MOHSEN2 : Implémentation de la récupération des plans**
-3.4.4. **GET** `/api/v1/plan/all` – Récupérer les plans disponibles.  
+#### **(*Prochains sprint*) : Implémentation de la récupération des plans**
+➔ 3.4.4. **GET** `/api/v1/plan/all` – Récupérer les plans disponibles.  
    - Vérifier que l’API retourne bien la liste des plans.  
    - Implémenter une interface permettant d’afficher ces plans (administrateur uniquement).  
 
@@ -175,8 +181,8 @@ L’utilisateur doit être connecté avant de gérer ses plans d’abonnement.
 Un utilisateur non connecté doit pouvoir consulter les tarifs avant de souscrire.  
 
 #### **Méthode de test :**
-3.5.1. Vérifier que la **Landing Page** affiche les tarifs récupérés via **GET** `/api/v1/plan/all`.  
-3.5.2. Ajouter un bouton pour souscrire à un plan.  
+➔ 3.5.1. Vérifier que la **Landing Page** affiche les tarifs récupérés via **GET** `/api/v1/plan/all`.  
+➔ 3.5.2. Ajouter un bouton pour souscrire à un plan.  
 
 
 
@@ -186,10 +192,10 @@ Le paiement dépend des comptes et des plans. Il faut donc les tester en dernier
 
 #### **Méthode de test :**
 
-3.6.1. **POST** `/api/v1/payment/create` – Créer un paiement.  
+➔ 3.6.1. **POST** `/api/v1/payment/create` – Créer un paiement.  
    - Vérifier que le paiement est bien enregistré en base de données.
      
-3.6.2. **POST** `/api/v1/payment/confirm` – Confirmer un paiement.  
+➔ 3.6.2. **POST** `/api/v1/payment/confirm` – Confirmer un paiement.  
    - Vérifier que l’état du paiement passe à "Confirmé".  
 
 ⚠ **Vérification importante :**  
@@ -203,13 +209,13 @@ Le paiement dépend des comptes et des plans. Il faut donc les tester en dernier
 Un utilisateur peut s’inscrire directement en souscrivant à un plan.  
 
 #### **Méthode de test :**
-3.7.1. **POST** `/api/v1/auth/user/registerBySubscription` – Inscription avec abonnement.  
+➔ 3.7.1. **POST** `/api/v1/auth/user/registerBySubscription` – Inscription avec abonnement.  
    - Vérifier que l’utilisateur est bien enregistré et lié à un plan.  
    - Confirmer que le token de souscription est bien utilisé.  
 
-#### **MOHSEN3 : Cas particulier**
-3.7.2. Gérer le **renouvellement d’abonnement** pour un utilisateur déjà inscrit.  
-3.7.3. Ajouter une gestion des remboursements (**refund**).  
+#### **(*Prochains sprint*) Cas particulier**
+➔ 3.7.2. Gérer le **renouvellement d’abonnement** pour un utilisateur déjà inscrit.  
+➔ 3.7.3. Ajouter une gestion des remboursements (**refund**).  
 
 
 
@@ -236,6 +242,8 @@ Certains utilisateurs peuvent vouloir se connecter sans créer de compte.
 - **POST** `/api/v1/auth/loginGoogle` – Tester la connexion via Google.  
 - Vérifier que le compte est bien créé après la première connexion.  
 
+<br/>
+<br/>
 
 
 
@@ -249,9 +257,15 @@ Certains utilisateurs peuvent vouloir se connecter sans créer de compte.
 
 
 
----
+
+
+
+
+<br/>
+<br/>
+
 # 4 - **Pourquoi un ordre précis pour les tests ?**
----
+
 
 - L’objectif est de garantir que chaque fonctionnalité fonctionne correctement avant de passer à la suivante. 
 - Tester les endpoints dans le bon ordre permet de :  
