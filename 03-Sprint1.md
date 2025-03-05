@@ -88,9 +88,9 @@
 
 
 
----
+
 # 3 - **Détails des Tests et Méthodologie**
----
+
 
 *Chaque test doit être effectué avec Swagger **avant** de développer l’interface.*
 
