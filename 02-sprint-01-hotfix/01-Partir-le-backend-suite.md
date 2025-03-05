@@ -1,14 +1,3 @@
-Tu as raison ! Pour récupérer et reconstruire l’image avec la dernière version du backend (Sprint 2), il est préférable d'utiliser :  
-
-```bash
-docker pull mohsenfennnira/newtechmindbackend:sprint2
-docker-compose up --build -d
-```
-
-Voici le README corrigé :  
-
----
-
 # Déploiement du backend avec Docker Compose  
 
 ## **Présentation**  
