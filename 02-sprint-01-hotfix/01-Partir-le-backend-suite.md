@@ -11,16 +11,16 @@ Avant de commencer, assurez-vous d’avoir :
 
 ## **Installation et exécution**  
 
-### **1. Télécharger le fichier `docker-compose.yml`**  
+# **1. Télécharger le fichier `docker-compose.yml`**  
 Assurez-vous d’avoir le fichier `docker-compose.yml` dans votre répertoire de travail.  
 
-### **2. Télécharger l’image Docker du backend**  
+# **2. Télécharger l’image Docker du backend**  
 Récupérez la dernière version du backend en exécutant la commande suivante :  
 ```bash
 docker pull mohsenfennnira/newtechmindbackend:sprint1
 ```
 
-### **3. Lancer les services avec Docker Compose**  
+# **3. Lancer les services avec Docker Compose**  
 Démarrez les conteneurs en arrière-plan avec la commande :  
 ```bash
 docker-compose up -d
@@ -29,7 +29,7 @@ Cette commande :
 - Télécharge automatiquement les images manquantes  
 - Démarre tous les services définis dans `docker-compose.yml`  
 
-### **4. Vérifier l’état des conteneurs**  
+# **4. Vérifier l’état des conteneurs**  
 Une fois le déploiement terminé, assurez-vous que tout fonctionne correctement avec :  
 ```bash
 docker ps
@@ -41,7 +41,7 @@ Les conteneurs suivants doivent être en cours d’exécution :
 
 ## **Accès aux services**  
 
-### **1. Backend Spring Boot**  
+# **1. Backend Spring Boot**  
 Si l’application écoute sur le port **8080**, elle sera accessible via :  
 ```
 http://localhost:8080
@@ -51,14 +51,14 @@ Consulter les logs si nécessaire :
 docker logs springboot_container
 ```
 
-### **2. Base de données MySQL**  
+# **2. Base de données MySQL**  
 Si un client MySQL est installé, vous pouvez vous connecter avec :  
 ```bash
 mysql -h 127.0.0.1 -P 3306 -u root -p
 ```
 Les identifiants sont définis dans `docker-compose.yml`.
 
-### **3. Interface phpMyAdmin**  
+# **3. Interface phpMyAdmin**  
 L’interface web de gestion MySQL est accessible ici :  
 ```
 http://localhost:8081
@@ -114,6 +114,17 @@ docker ps -a
 ### **Redémarrer un conteneur spécifique**  
 ```bash
 docker restart <nom_du_conteneur>
+```
+
+
+## **Résumé**  
+
+
+```bash
+1️⃣ Téléchargez le fichier `docker-compose.yml`
+2️⃣ docker pull mohsenfennnira/newtechmindbackend:sprint1
+3️⃣ docker-compose up -d
+4️⃣ ou docker-compose up --build -d
 ```
 
 ---
