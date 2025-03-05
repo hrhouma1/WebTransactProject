@@ -2,7 +2,55 @@
 # **Ordre et Méthodologie des Tests des Endpoints API**
 ---
 
-## **Pourquoi un ordre précis pour les tests ?**
+# 1 - Liste des endpoints
+
+```ssh
++-------+---------+------------------------------------------------+------------------------------------------+
+| Ordre | Méthode |                  Endpoint                     |               Description                |
++-------+---------+------------------------------------------------+------------------------------------------+
+|   1   |  POST   | /api/v1/auth/user/register                     | Inscription utilisateur                  |
+|   2   |   PUT   | /api/v1/auth/validateAccount/{verificationCode} | Validation de l'email                    |
+|   3   |  POST   | /api/v1/auth/token                              | Connexion utilisateur                    |
+|   4   |  POST   | /api/v1/auth/admin/register                     | Inscription administrateur               |
+|   5   |   PUT   | /api/v1/auth/validateAccount/{verificationCode} | Validation administrateur                |
+|   6   |  POST   | /api/v1/auth/token                              | Connexion administrateur                 |
+|   7   | DELETE  | /api/v1/auth/deleteUser                         | Suppression d'un compte                  |
+|   8   |   GET   | /api/v1/auth/userinsesson                       | Vérification de l'utilisateur en session |
+|   9   |  POST   | /api/v1/auth/updateAccount                      | Mise à jour du compte                    |
+|  10   |  POST   | /api/v1/auth/forgotPassword                     | Demande de réinitialisation du mot de passe |
+|  11   |   PUT   | /api/v1/auth/resetPassword/{token}              | Réinitialisation de mot de passe         |
+|  12   |  POST   | /api/v1/auth/addUserByAdmin                     | Ajout d'un utilisateur par un admin      |
+|  13   |  POST   | /api/v1/plan/add                                | Ajout d'un plan                          |
+|  14   |   PUT   | /api/v1/plan/update/{id}                        | Mise à jour d'un plan                    |
+|  15   |   PUT   | /api/v1/plan/delete/{id}                        | Suppression d'un plan                    |
+|  16   |   GET   | /api/v1/plan/all                                | Récupération de tous les plans           |
+|  17   |  POST   | /api/v1/payment/create                          | Création d'un paiement                   |
+|  18   |  POST   | /api/v1/payment/confirm                         | Confirmation d'un paiement               |
+|  19   |  POST   | /api/v1/auth/user/registerBySubscription        | Inscription via abonnement               |
+|  20   |  POST   | /api/v1/auth/loginGoogle                        | Connexion via Google                     |
+|  21   |  POST   | /api/v1/auth/logout                             | Déconnexion utilisateur                  |
+|  22   |  POST   | /api/v1/auth/admin/logout                       | Déconnexion administrateur               |
+|  23   |   PUT   | /api/v1/auth/user/resendVerification            | Renvoyer l'email de vérification         |
+|  24   |   PUT   | /api/v1/auth/user/disableAccount                | Désactivation du compte utilisateur      |
+|  25   |  POST   | /api/v1/auth/user/reactivateAccount             | Réactivation du compte utilisateur       |
+|  26   |   PUT   | /api/v1/auth/user/changePassword                | Changement de mot de passe               |
+|  27   |  POST   | /api/v1/auth/user/updateEmail                   | Mise à jour de l'email utilisateur       |
+|  28   |   PUT   | /api/v1/auth/admin/manageUsers                  | Gestion des utilisateurs par l'admin     |
+|  29   |   PUT   | /api/v1/auth/admin/assignRole                   | Assignation de rôle                      |
+|  30   |   PUT   | /api/v1/auth/admin/revokeRole                   | Révocation de rôle                       |
++-------+---------+------------------------------------------------+------------------------------------------+
+```
+
+
+
+
+
+
+
+
+
+
+# **Pourquoi un ordre précis pour les tests ?**
 - L’objectif est de garantir que chaque fonctionnalité fonctionne correctement avant de passer à la suivante. 
 - Tester les endpoints dans le bon ordre permet de :  
 
@@ -164,40 +212,3 @@ Ce processus garantit des tests progressifs et efficaces, facilitant l’identif
 
 
 
-
-```ssh
-+-------+---------+------------------------------------------------+------------------------------------------+
-| Ordre | Méthode |                  Endpoint                     |               Description                |
-+-------+---------+------------------------------------------------+------------------------------------------+
-|   1   |  POST   | /api/v1/auth/user/register                     | Inscription utilisateur                  |
-|   2   |   PUT   | /api/v1/auth/validateAccount/{verificationCode} | Validation de l'email                    |
-|   3   |  POST   | /api/v1/auth/token                              | Connexion utilisateur                    |
-|   4   |  POST   | /api/v1/auth/admin/register                     | Inscription administrateur               |
-|   5   |   PUT   | /api/v1/auth/validateAccount/{verificationCode} | Validation administrateur                |
-|   6   |  POST   | /api/v1/auth/token                              | Connexion administrateur                 |
-|   7   | DELETE  | /api/v1/auth/deleteUser                         | Suppression d'un compte                  |
-|   8   |   GET   | /api/v1/auth/userinsesson                       | Vérification de l'utilisateur en session |
-|   9   |  POST   | /api/v1/auth/updateAccount                      | Mise à jour du compte                    |
-|  10   |  POST   | /api/v1/auth/forgotPassword                     | Demande de réinitialisation du mot de passe |
-|  11   |   PUT   | /api/v1/auth/resetPassword/{token}              | Réinitialisation de mot de passe         |
-|  12   |  POST   | /api/v1/auth/addUserByAdmin                     | Ajout d'un utilisateur par un admin      |
-|  13   |  POST   | /api/v1/plan/add                                | Ajout d'un plan                          |
-|  14   |   PUT   | /api/v1/plan/update/{id}                        | Mise à jour d'un plan                    |
-|  15   |   PUT   | /api/v1/plan/delete/{id}                        | Suppression d'un plan                    |
-|  16   |   GET   | /api/v1/plan/all                                | Récupération de tous les plans           |
-|  17   |  POST   | /api/v1/payment/create                          | Création d'un paiement                   |
-|  18   |  POST   | /api/v1/payment/confirm                         | Confirmation d'un paiement               |
-|  19   |  POST   | /api/v1/auth/user/registerBySubscription        | Inscription via abonnement               |
-|  20   |  POST   | /api/v1/auth/loginGoogle                        | Connexion via Google                     |
-|  21   |  POST   | /api/v1/auth/logout                             | Déconnexion utilisateur                  |
-|  22   |  POST   | /api/v1/auth/admin/logout                       | Déconnexion administrateur               |
-|  23   |   PUT   | /api/v1/auth/user/resendVerification            | Renvoyer l'email de vérification         |
-|  24   |   PUT   | /api/v1/auth/user/disableAccount                | Désactivation du compte utilisateur      |
-|  25   |  POST   | /api/v1/auth/user/reactivateAccount             | Réactivation du compte utilisateur       |
-|  26   |   PUT   | /api/v1/auth/user/changePassword                | Changement de mot de passe               |
-|  27   |  POST   | /api/v1/auth/user/updateEmail                   | Mise à jour de l'email utilisateur       |
-|  28   |   PUT   | /api/v1/auth/admin/manageUsers                  | Gestion des utilisateurs par l'admin     |
-|  29   |   PUT   | /api/v1/auth/admin/assignRole                   | Assignation de rôle                      |
-|  30   |   PUT   | /api/v1/auth/admin/revokeRole                   | Révocation de rôle                       |
-+-------+---------+------------------------------------------------+------------------------------------------+
-```
