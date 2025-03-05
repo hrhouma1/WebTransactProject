@@ -165,7 +165,7 @@ Ce processus garantit des tests progressifs et efficaces, facilitant l’identif
 
 
 
-
+```ssh
 +-------+---------+------------------------------------------------+------------------------------------------+
 | Ordre | Méthode |                  Endpoint                     |               Description                |
 +-------+---------+------------------------------------------------+------------------------------------------+
@@ -200,3 +200,4 @@ Ce processus garantit des tests progressifs et efficaces, facilitant l’identif
 |  29   |   PUT   | /api/v1/auth/admin/assignRole                   | Assignation de rôle                      |
 |  30   |   PUT   | /api/v1/auth/admin/revokeRole                   | Révocation de rôle                       |
 +-------+---------+------------------------------------------------+------------------------------------------+
+```
