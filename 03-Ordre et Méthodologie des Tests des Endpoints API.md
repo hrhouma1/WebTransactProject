@@ -3,8 +3,11 @@
 ---
 
 
-# 1 - Liste des endpoints
 
+
+
+
+# 1 - Liste des endpoints
 
 ```ssh
 +-------+---------+------------------------------------------------+------------------------------------------+
@@ -43,6 +46,18 @@
 +-------+---------+------------------------------------------------+------------------------------------------+
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
 # 2 - **Résumé de la Stratégie de Test**
 
 *Ce processus garantit des tests progressifs et efficaces, facilitant l’identification des erreurs à chaque étape.*
@@ -51,6 +66,14 @@
 2.2. **Tester la gestion des comptes** (modification, récupération de mot de passe).  
 2.3. **Tester la gestion des plans** après l’authentification.  
 2.4. **Enfin, tester les paiements**, car ils dépendent des plans et de l’authentification.  
+
+
+
+
+
+
+
+
 
 
 
@@ -211,6 +234,8 @@ Certains utilisateurs peuvent vouloir se connecter sans créer de compte.
 
 - **POST** `/api/v1/auth/loginGoogle` – Tester la connexion via Google.  
 - Vérifier que le compte est bien créé après la première connexion.  
+
+
 
 
 
