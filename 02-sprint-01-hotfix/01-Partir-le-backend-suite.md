@@ -86,7 +86,7 @@ docker-compose down -v
 ```
 
 ## **Mises à jour à venir**  
-- La **Sprint 2** avec de nouvelles fonctionnalités sera disponible d’ici **dimanche**.  
+- La **Sprint 2** avec de nouvelles fonctionnalités sera disponible prochainement **dans 4 semaines**.  
 - Pour récupérer la nouvelle version et reconstruire les services, exécutez :  
   ```bash
   docker pull mohsenfennnira/newtechmindbackend:sprint2
