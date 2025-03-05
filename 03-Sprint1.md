@@ -101,32 +101,32 @@ Sans authentification, il est impossible d’accéder aux autres fonctionnalité
 
 #### **Étape 1 : Tester l’inscription et la connexion pour un utilisateur normal**
 
-1.1. **POST** `/api/v1/auth/user/register` – Créer un utilisateur normal.  
+3.1.1. **POST** `/api/v1/auth/user/register` – Créer un utilisateur normal.  
    - Envoyez les données requises (email, mot de passe, etc.).  
    - Vérifiez dans la base de données que l'utilisateur est bien enregistré.
      
-1.2. **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Vérifier le compte.  
+3.1.2. **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Vérifier le compte.  
    - Utilisez le code reçu par email pour activer le compte.  
    - Vérifiez que `is_validated = true` en base de données.
      
-1.3. **POST** `/api/v1/auth/token` – Connexion de l’utilisateur.  
+3.1.3. **POST** `/api/v1/auth/token` – Connexion de l’utilisateur.  
    - Utilisez les identifiants pour récupérer un token d’authentification.  
    - **Stockez le token** dans le `localStorage` (via les outils du navigateur).  
 
 
 #### **Étape 2 : Tester l’inscription et la connexion d’un administrateur**
 
-2.1. **POST** `/api/v1/auth/admin/register` – Inscrire un administrateur.  
+2.2.1. **POST** `/api/v1/auth/admin/register` – Inscrire un administrateur.  
 
-2.2. Modifier **manuellement** en base de données `is_validated = true`.  
+2.2.2. Modifier **manuellement** en base de données `is_validated = true`.  
 
-2.3. **POST** `/api/v1/auth/token` – Connexion de l’admin.  
+2.2.3. **POST** `/api/v1/auth/token` – Connexion de l’admin.  
    - Récupérer un token d’authentification.
    - Vérifiez que le token est bien généré.
      
-2.4. **(Optionnel)** **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Si la validation admin est requise, tester cette API.
+2.2.4. **(Optionnel)** **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Si la validation admin est requise, tester cette API.
       
-2.5. **Ajout du superadmin** (MOHSEN1) : S'assurer que l'email `haythemrehouma@gmail.com` peut valider les administrateurs.  
+2.2.5. **Ajout du superadmin** (MOHSEN1) : S'assurer que l'email `haythemrehouma@gmail.com` peut valider les administrateurs.  
 
 
 
