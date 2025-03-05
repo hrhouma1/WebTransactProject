@@ -1,4 +1,6 @@
+---
 # **Ordre et Méthodologie des Tests des Endpoints API**
+---
 
 ## **Pourquoi un ordre précis pour les tests ?**
 - L’objectif est de garantir que chaque fonctionnalité fonctionne correctement avant de passer à la suivante. 
@@ -11,14 +13,15 @@
 
 ### **Outils requis pour les tests**
 Avant de commencer, assurez-vous d’avoir :  
-✔ **Swagger** pour tester les endpoints REST API.  
-✔ **Postman (optionnel)** pour tester des cas avancés.  
-✔ **Base de données accessible** pour vérifier les changements d’état des utilisateurs et des plans.  
-✔ **Navigateur et outils de développement (F12)** pour tester l’intégration du localStorage et l’authentification.  
+- **Swagger** pour tester les endpoints REST API.  
+- **Postman (optionnel)** pour tester des cas avancés.  
+- **Base de données accessible** pour vérifier les changements d’état des utilisateurs et des plans.  
+- **Navigateur et outils de développement (F12)** pour tester l’intégration du localStorage et l’authentification.  
 
 ---
+# **Ordre des Tests et Méthodologie**
+---
 
-## **Ordre des Tests et Méthodologie**
 Chaque test doit être effectué avec Swagger **avant** de développer l’interface.  
 
 ### **1. Authentification et Gestion des Comptes** (Tester en premier)  
