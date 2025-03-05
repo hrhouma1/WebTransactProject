@@ -54,6 +54,7 @@
 
 <br/>
 <br/>
+
 # 2 - **Résumé de la Stratégie de Test**
 
 *Ce processus garantit des tests progressifs et efficaces, facilitant l’identification des erreurs à chaque étape.*
