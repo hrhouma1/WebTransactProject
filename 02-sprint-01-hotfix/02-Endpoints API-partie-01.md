@@ -28,11 +28,22 @@
 
 ### **1.3 Validation optionnelle d’un administrateur**  
 
-(MOSEN1) Ajouter l’email du **superadmin** `haythemrehouma@gmail.com` pour valider les comptes administrateurs.  
+---
+# NEW FIX 1
+---
+
+- *J'ai ajouté l’email du **superadmin** `haythemrehouma@gmail.com` pour valider les comptes administrateurs.* 
 
 - **PUT** `/api/v1/auth/validateAccount/{verificationCode}` – Validation du compte administrateur via un email  
 
 
+
+
+
+
+<br/>
+<br/>
+<br/>
 
 # **2. Implémentation du logout**  
 
@@ -41,11 +52,24 @@
 - Développer une interface avec un **bouton de déconnexion**.  
 
 
+
+
+
+<br/>
+<br/>
+<br/>
+
 # **3. Connexion en tant qu’administrateur**  
 
 Pré-requis pour pouvoir gérer les plans.  
 
 
+
+
+
+<br/>
+<br/>
+<br/>
 
 # **4. Gestion des plans (Tester après l’authentification)**  
 
@@ -65,16 +89,28 @@ Pré-requis pour pouvoir gérer les plans.
 
 
 
+
+<br/>
+<br/>
+<br/>
+
 # **5. Vérification du logout après connexion**  
 
 S’assurer que la déconnexion est bien gérée après authentification.  
 
+
+<br/>
+<br/>
+<br/>
 
 # **6. Landing page et affichage des tarifs**  
 
 Le client non connecté doit pouvoir consulter les tarifs et choisir un plan.  
 
 
+<br/>
+<br/>
+<br/>
 
 # **7. Gestion des paiements (Tester en dernier)**  
 
@@ -90,6 +126,10 @@ Le client non connecté doit pouvoir consulter les tarifs et choisir un plan.
 - Tester avec **Swagger** avant d’implémenter l’interface.  
 
 
+<br/>
+<br/>
+<br/>
+
 # **8. Gestion des abonnements et cas particuliers**  
 
 ### **8.1 Inscription via un abonnement (Nouvel utilisateur)**  
@@ -101,10 +141,13 @@ Le client non connecté doit pouvoir consulter les tarifs et choisir un plan.
 
 ### **8.2 Renouvellement d’un abonnement pour un utilisateur déjà inscrit**  
 
-(MOSEHN3) Gérer le cas où un utilisateur déjà connecté souhaite renouveler son abonnement.  
+(*OPTIONNEL - Prochains sprints*) Gérer le cas où un utilisateur déjà connecté souhaite renouveler son abonnement.  
 
 - Implémenter la **gestion des remboursements** (`refund`).  
 
+<br/>
+<br/>
+<br/>
 
 # **9. Autres fonctionnalités**  
 
