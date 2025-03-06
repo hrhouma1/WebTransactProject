@@ -28,7 +28,7 @@ services:
       - mysql
 
   springboot-app:
-    image: newtechmindbackend-springboot-app:sprint2
+    image: mohsenfennnira/newtechmindbackend:sprint2
     container_name: springboot_container
     restart: always
     ports:
