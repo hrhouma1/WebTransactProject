@@ -18,14 +18,14 @@ doskey /history
 
 
 
-# 2
+# 2 
 
 ### **🚀 Prompt pour Cursor AI : Développement d'une interface React pour l'authentification**  
 
 > **Prompt :**
 >  
 > **Objectif :** Développe une interface **React** permettant l'inscription, la validation de compte et l'authentification d'un utilisateur via une API REST.  
->  
+>  N'oublie pas que j'utilise TypeScript, React et Tailwind.
 > **Stack technique :** React (Vite ou Create React App), TypeScript, Tailwind CSS, Axios pour les requêtes API, React Router pour la navigation, Zustand ou Context API pour la gestion d'état.  
 >  
 > ### **📌 Fonctionnalités à implémenter :**
@@ -122,5 +122,11 @@ Content-Type: application/json
   "password": "Spring123$"
 }
 ```
+
+- N'oublie pas que j'utilise TypeScript, React et Tailwind.
+
+
+
+
 
 
