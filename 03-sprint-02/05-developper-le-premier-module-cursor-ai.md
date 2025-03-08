@@ -1,6 +1,8 @@
 # 1
 
 ```python
+mkdir newtechmindv1
+cd newtechmindv1
 npm create vite@latest . -- --template react-ts
 npm create vite@latest . -- --template react-ts
 npm create vite@latest
