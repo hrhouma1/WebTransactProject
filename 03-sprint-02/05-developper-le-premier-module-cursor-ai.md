@@ -56,16 +56,9 @@
 
 
 
-# Partie 1
+# Partie 1 - développer l'interface correpondante
 
-# **Tester une requête POST avec 3 méthodes (VS Code, cURL, Fetch API)** 
-# **1️⃣ Tester avec VS Code (REST Client)**
-L'extension **REST Client** permet d'envoyer des requêtes HTTP directement dans **VS Code**.
 
-### **📌 Étapes :**
-1. **Installer l'extension REST Client** dans VS Code.
-2. **Créer un fichier** avec l'extension `.rest` ou `.http` (ex: `test.http`).
-3. **Ajouter la requête suivante :**
 
 ```http
 POST http://localhost:8085/api/v1/auth/user/register
@@ -81,12 +74,10 @@ Content-Type: application/json
   "roleTypes": "USER"
 }
 ```
-4. **Exécuter la requête** :  
-   - Ouvre le fichier `.http` dans VS Code.
-   - Clique sur **"Send Request"**.
 
 
-# Partie 2
+
+# Partie 2 - développer l'interface correpondante
 
 ```http
 PUT http://localhost:8085/api/v1/auth/validateAccount/82281
@@ -94,4 +85,20 @@ Content-Type: application/json
 ```
 
 
-### Partie 3
+### Partie 3 - développer l'interface correpondante
+
+
+L'endpoint `/api/v1/auth/token` permet à l'utilisateur de s'authentifier et de recevoir un **JWT Token** qu'il pourra utiliser pour les requêtes sécurisées.
+
+
+```http
+POST http://localhost:8085/api/v1/auth/token
+Content-Type: application/json
+
+{
+  "email": "rhoumahaythem@gmail.com",
+  "password": "Spring123$"
+}
+```
+
+
