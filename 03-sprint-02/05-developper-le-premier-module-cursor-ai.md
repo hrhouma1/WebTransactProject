@@ -54,3 +54,39 @@
 >  
 > **📌 Bonus :** Ajoute une redirection automatique vers `/dashboard` après une connexion réussie, et empêche l’accès aux routes protégées sans token.  
 
+
+
+# Partie 1
+
+# **Tester une requête POST avec 3 méthodes (VS Code, cURL, Fetch API)** 
+# **1️⃣ Tester avec VS Code (REST Client)**
+L'extension **REST Client** permet d'envoyer des requêtes HTTP directement dans **VS Code**.
+
+### **📌 Étapes :**
+1. **Installer l'extension REST Client** dans VS Code.
+2. **Créer un fichier** avec l'extension `.rest` ou `.http` (ex: `test.http`).
+3. **Ajouter la requête suivante :**
+
+```http
+POST http://localhost:8085/api/v1/auth/user/register
+Content-Type: application/json
+
+{
+  "firstName": "haythem",
+  "lastName": "rehouma",
+  "email": "rhoumahaythem@gmail.com",
+  "password": "Spring123$",
+  "phone": "4383504391",
+  "profilePicture": "string",
+  "roleTypes": "USER"
+}
+```
+4. **Exécuter la requête** :  
+   - Ouvre le fichier `.http` dans VS Code.
+   - Clique sur **"Send Request"**.
+
+
+### Partie 2
+
+
+### Partie 3
