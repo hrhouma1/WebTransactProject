@@ -1,3 +1,12 @@
+# 1
+
+```python
+npm create vite@latest . -- --template react-ts
+npm create vite@latest . -- --template react-ts
+```
+
+# 2
+
 ### **🚀 Prompt pour Cursor AI : Développement d'une interface React pour l'authentification**  
 
 > **Prompt :**
@@ -54,7 +63,7 @@
 >  
 > **📌 Bonus :** Ajoute une redirection automatique vers `/dashboard` après une connexion réussie, et empêche l’accès aux routes protégées sans token.  
 
-
+# 3
 
 # Partie 1 - développer l'interface correpondante
 
