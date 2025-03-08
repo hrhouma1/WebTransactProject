@@ -1,4 +1,7 @@
-# 1
+
+---
+# ÉTAPE 1 - Création du projet
+---
 
 ```python
 mkdir newtechmindv1
@@ -16,9 +19,11 @@ doskey /history
 # https://www.youtube.com/watch?v=5m9jkqXEc28
 ```
 
+---
+# ÉTAPE 2. SÉRIE 1 de Prompts à donner à Cursor AI (CRTL + I) ( Série 1 ==> 2, 3, 4)
+---
 
-
-# 2 
+# 2.1
 
 ### **🚀 Prompt pour Cursor AI : Développement d'une interface React pour l'authentification**  
 
@@ -76,7 +81,7 @@ doskey /history
 >  
 > **📌 Bonus :** Ajoute une redirection automatique vers `/dashboard` après une connexion réussie, et empêche l’accès aux routes protégées sans token.  
 
-# 3
+# 2.2
 
 # Partie 1 - développer l'interface correpondante
 
@@ -123,10 +128,88 @@ Content-Type: application/json
 }
 ```
 
+# 2.3 - Insistez pour utiliser ces technologies et ne pas utiliser javascript mais plutôt TypeScript
+
 - N'oublie pas que j'utilise TypeScript, React et Tailwind.
 
 
 
 
 
+---
+# ÉTAPE 3. SÉRIE 2 de Prompts - Raffinements de prompts
+---
 
+*J'ai donné le prompt générale plusieurs fois et le problème a été fixé !*
+
+**Prompt 1  Générale:**  
+*"Mon application utilise TypeScript, React et Tailwind, mais certains éléments ne s'affichent pas correctement sur la page. Peux-tu analyser le CSS appliqué aux composants et identifier les problèmes potentiels ? Voici quelques détails :*  
+
+**Peux-tu m'aider à diagnostiquer et résoudre ce problème ?
+
+
+
+*OPTIONNEL*
+
+**Prompt 2 spécifique:**  
+*"Mon application utilise TypeScript, React et Tailwind, mais certains éléments ne s'affichent pas correctement sur la page. Peux-tu analyser le CSS appliqué aux composants et identifier les problèmes potentiels ? Voici quelques détails :*  
+
+- *Les styles Tailwind sont bien appliqués dans le JSX, mais l'affichage ne correspond pas aux attentes.*  
+- *Certains éléments sont invisibles ou mal positionnés.*  
+- *J'utilise `className` correctement dans mes composants React.*  
+- *J'ai vérifié que Tailwind est bien importé dans mon projet.*  
+
+**Peux-tu m'aider à diagnostiquer et résoudre ce problème ? Je peux te fournir le code d'un composant spécifique si nécessaire.**"  
+
+
+
+---
+# ÉTAPE 4. Accéder à la page
+---
+
+*Vérifiez les composants*
+
+- http://localhost:5173/
+- http://localhost:5173/register
+- http://localhost:5173/login
+
+
+---
+# ÉTAPE 5. Travaillez avec git
+---
+
+
+```bash
+# Initialiser un dépôt Git
+git init
+
+# Ajouter tous les fichiers au suivi
+git add .
+
+# Configurer le nom d'utilisateur localement
+git config --local user.name "hrhouma1"
+
+# Configurer l'email localement
+git config --local user.email "rhoumahaythem@gmail.com"
+
+# Commiter les modifications avec un message
+git commit -m "Initial commit"
+
+# Ajouter un dépôt distant (remplacez l'URL par celle de votre repo)
+git remote add origin https://github.com/hrhouma1/sw1.git
+git branch -M main
+git push -u origin main
+
+```
+
+🔹 **Explication des corrections :**  
+- `git config username --local` → remplacé par `git config --local user.name "VotreNomUtilisateur"`.
+- `git config email --local` → remplacé par `git config --local user.email "VotreEmail@example.com"`.
+- Ajout du commit (`git commit -m "message"`) car `git push` nécessite des commits.
+- Ajout du dépôt distant avec `git remote add origin` avant le `git push`.
+- `git push -u origin main` permet de lier la branche locale à la branche distante.
+
+Si votre branche principale s'appelle `master` au lieu de `main`, adaptez la dernière commande avec :
+```bash
+git push -u origin master
+```
