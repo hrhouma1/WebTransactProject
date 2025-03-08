@@ -213,3 +213,17 @@ Si votre branche principale s'appelle `master` au lieu de `main`, adaptez la der
 ```bash
 git push -u origin master
 ```
+
+
+
+---
+# ÉTAPE 6. Cloner le projet sur la VM Ubuntu 2204
+---
+
+```bash
+git clone https://github.com/hrhouma1/sw1.git
+cd sw1
+code .
+npm install
+npm run dev
+```
