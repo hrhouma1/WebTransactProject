@@ -1,0 +1,31 @@
+POST http://localhost:8085/api/v1/auth/user/register
+Content-Type: application/json
+
+{
+  "firstName": "haythem",
+  "lastName": "rehouma",
+  "email": "rhoumahaythem@gmail.com",
+  "password": "Spring123$",
+  "phone": "4383504391",
+  "profilePicture": "string",
+  "roleTypes": "USER"
+}
+
+###
+
+PUT http://localhost:8085/api/v1/auth/validateAccount/22026
+Content-Type: application/json
+
+###
+
+POST http://localhost:8085/api/v1/auth/token
+Content-Type: application/json
+
+{
+  "email": "rhoumahaythem@gmail.com",
+  "password": "Spring123$"
+}
+
+### RECUPERER LE TOKEN ==> eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlVTRVIiLCJlbWFpbCI6InJob3VtYWhheXRoZW1AZ21haWwuY29tIiwic3ViIjoicmhvdW1haGF5dGhlbUBnbWFpbC5jb20iLCJpYXQiOjE3NDEzOTQyMDQsImV4cCI6MTc0MTQwMTQwNH0.uLlh_3vM2ziR0PtPU6sprju2Henc4XF4pU-0-zy67Ag
+
+
