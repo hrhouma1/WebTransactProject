@@ -86,7 +86,12 @@ Content-Type: application/json
    - Clique sur **"Send Request"**.
 
 
-### Partie 2
+# Partie 2
+
+```http
+PUT http://localhost:8085/api/v1/auth/validateAccount/82281
+Content-Type: application/json
+```
 
 
 ### Partie 3
