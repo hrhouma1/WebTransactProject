@@ -4,25 +4,19 @@
 mkdir newtechmindv1
 cd newtechmindv1
 npm create vite@latest . -- --template react-ts
-npm create vite@latest . -- --template react-ts
-npm create vite@latest
-cd newtechmindv1
 npm install -D tailwindcss postcss autoprefixer
-npm install
-code .
-npm install tailwindcss
-npm install -D tailwindcss
-npx tailwindcss init
-npm cache clean --force
+npx tailwind init -p
 npm install -D tailwindcss@3 postcss autoprefixer
 npx tailwind init -p
 npm run dev
-odoskey /history
+code .
 doskey /history
+
 
 # https://medium.com/@pushpendrapal_/how-to-setup-react-typescript-and-tailwind-css-with-vite-in-a-project-8d9b0b51d1bd
 # https://www.youtube.com/watch?v=5m9jkqXEc28
 ```
+
 
 
 # 2
