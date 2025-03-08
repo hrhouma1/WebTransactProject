@@ -1,4 +1,4 @@
-# **Tutoriel complet : Récupérer un Token après authentification**   
+# **Tutoriel complet : Se Connecter et récupérer un Token après authentification**   
 
 L'endpoint `/api/v1/auth/token` permet à l'utilisateur de s'authentifier et de recevoir un **JWT Token** qu'il pourra utiliser pour les requêtes sécurisées.
 
