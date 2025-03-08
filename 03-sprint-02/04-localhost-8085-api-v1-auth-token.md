@@ -1,4 +1,4 @@
-### 🔥 **Tutoriel complet : Récupérer un Token après authentification**  
+### **Tutoriel complet : Récupérer un Token après authentification**   
 
 L'endpoint `/api/v1/auth/token` permet à l'utilisateur de s'authentifier et de recevoir un **JWT Token** qu'il pourra utiliser pour les requêtes sécurisées.
 
@@ -15,7 +15,7 @@ Content-Type: application/json
   "password": "Spring123$"
 }
 ```
-### 📌 **Étapes** :
+### **Étapes** :
 1. **Installer l'extension REST Client** si ce n'est pas encore fait.
 2. **Créer le fichier `.http` ou `.rest`**.
 3. **Lancer la requête en cliquant sur "Send Request"**.
@@ -23,7 +23,7 @@ Content-Type: application/json
 
 
 ## **2️⃣ Tester avec cURL (Terminal / CMD)**
-### 📌 **Commande :**
+### **Commande :**
 ```sh
 curl -X POST "http://localhost:8085/api/v1/auth/token" \
      -H "Content-Type: application/json" \
@@ -32,14 +32,14 @@ curl -X POST "http://localhost:8085/api/v1/auth/token" \
            "password": "Spring123$"
          }'
 ```
-### 📌 **Exécution :**
+### **Exécution :**
 - **Windows (CMD/Powershell)** : Exécute directement.
 - **Linux/Mac** : Exécute dans le terminal.
 
 
 
 ## **3️⃣ Tester avec Fetch API (JavaScript)**
-### 📌 **Code JavaScript :**
+### **Code JavaScript :**
 ```js
 fetch("http://localhost:8085/api/v1/auth/token", {
     method: "POST",
@@ -57,7 +57,7 @@ fetch("http://localhost:8085/api/v1/auth/token", {
 })
 .catch(error => console.error("Erreur:", error));
 ```
-### 📌 **Exécuter le script :**
+### **Exécuter le script :**
 - **Dans le navigateur (F12 -> Console)** : Copie-colle le code.
 - **Dans Node.js :**  
   1. **Créer un fichier** `token.js` et y coller le code.
@@ -68,7 +68,7 @@ fetch("http://localhost:8085/api/v1/auth/token", {
 
 
 
-## **📌 Exemple de Réponse JSON avec le Token**
+## **Exemple de Réponse JSON avec le Token**
 Lorsqu'on envoie une requête valide, l'API retourne une réponse **200 OK** contenant le **JWT Token** :
 
 ```http
@@ -102,7 +102,7 @@ Connection: close
 }
 ```
 
-## **✅ Conclusion**
+## **Conclusion**
 | Méthode       | Objectif                           | Idéal pour |
 |--------------|---------------------------------|------------|
 | **REST Client (VS Code)** | Tester rapidement dans une interface | Développement & tests rapides |
