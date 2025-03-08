@@ -1,4 +1,3 @@
-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-HHHH
 ---
 # ÉTAPE 1 - Création du projet
 ---
