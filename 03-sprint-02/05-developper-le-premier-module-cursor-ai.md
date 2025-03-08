@@ -11,8 +11,7 @@ npx tailwind init -p
 npm run dev
 code .
 doskey /history
-
-
+# Références
 # https://medium.com/@pushpendrapal_/how-to-setup-react-typescript-and-tailwind-css-with-vite-in-a-project-8d9b0b51d1bd
 # https://www.youtube.com/watch?v=5m9jkqXEc28
 ```
