@@ -227,3 +227,48 @@ code .
 npm install
 npm run dev
 ```
+
+
+---
+# ÉTAPE 7. Cloner le projet sur la VM Ubuntu 2204
+---
+
+```bash
+testez http://localhost:5173/register
+
+```
+### Erreur
+
+```ssh
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8085/api/v1/auth/user/register. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 403.  Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8085/api/v1/auth/user/register. (Reason:
+```
+
+```ssh
+CORS request did not succeed). Status code: (null). insiste su r TypeScript, React et Tailwind.
+```
+
+
+---
+# ÉTAPE 8. Cloner le projet sur la VM Ubuntu 2204
+---
+
+> **Prompt :**
+>  
+
+Je travaille sur une application frontend avec **TypeScript, React et Tailwind CSS**, qui communique avec un backend à l'URL **http://localhost:8085/api/v1/auth/user/register**.  
+
+J'obtiens une erreur CORS :  
+
+**Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8085/api/v1/auth/user/register. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 403.**  
+**Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8085/api/v1/auth/user/register. (Reason: CORS request did not succeed). Status code: (null).**  
+
+Peux-tu corriger cela en modifiant mon backend pour ajouter les bons en-têtes CORS ? Assure-toi que :  
+- **Le backend autorise les requêtes venant de `http://localhost:5173`** (si j'utilise Vite) ou `http://localhost:3000` (si j'utilise Create React App).  
+- **Les méthodes HTTP nécessaires sont bien autorisées (GET, POST, PUT, DELETE, OPTIONS)**.  
+- **Les headers `Content-Type` et `Authorization` sont acceptés**.  
+- **La configuration fonctionne correctement pour une API REST utilisée avec un frontend React en TypeScript**.  
+
+Donne-moi une solution spécifique en fonction du backend possible : **Express.js (Node.js), NestJS, Spring Boot ou Django**.  
+Ajoute les commandes nécessaires si je dois installer un package (`cors`, `django-cors-headers`, etc.).  
+
+Merci ! 🚀  
