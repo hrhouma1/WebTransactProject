@@ -1,0 +1,1 @@
+Le problème vient du fait qu’Astro 5.5 utilise la méthode rendered() au lieu de render(). Il faut donc remplacer toutes les occurrences de render() par rendered() dans le code pour qu’il fonctionne correctement avec la version 5.5.
